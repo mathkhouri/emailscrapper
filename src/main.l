@@ -9,7 +9,10 @@ PALAVRA [[:alnum:]]
 
 %%
 
-\({PALAVRA}+[._-]*\)+[@]\({PALAVRA}+[._-]*{PALAVRA}*\)+ { printf("%s\n",yytext); }
+({PALAVRA}+[._-]*)+[@]({PALAVRA}+[._-]*{PALAVRA}*)+ { printf("%s\n",yytext); }
+
+.  ;
+\n ;
 	
 %%
 
