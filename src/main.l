@@ -5,11 +5,12 @@
 %}
 
 PALAVRA [[:alnum:]]
-ESPACO  [[:space:]] 
 
 %%
 
-({PALAVRA}+[._-]*)+[@]({PALAVRA}+([._-]{PALAVRA})?)+ { printf("%s\n",yytext); }
+({PALAVRA}+([._-]{PALAVRA})?)+[@]({PALAVRA}+"-\ ")+[.]* ; 
+
+({PALAVRA}+([._-]{PALAVRA})?)+[@]({PALAVRA}+([._-]{PALAVRA})?)+ { printf("%s\n",yytext); }
 
 .  ;
 \n ;
