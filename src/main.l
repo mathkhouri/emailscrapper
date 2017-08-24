@@ -1,15 +1,15 @@
 %{
 
 #include <stdio.h>
-int rola =0;
 
 %}
 
 PALAVRA [[:alnum:]]
+ESPACO  [[:space:]] 
 
 %%
 
-({PALAVRA}+[._-]*)+[@]({PALAVRA}+[._-]*{PALAVRA}*)+ { printf("%s\n",yytext); }
+({PALAVRA}+[._-]*)+[@]({PALAVRA}+([._-]{PALAVRA})?)+ { printf("%s\n",yytext); }
 
 .  ;
 \n ;
